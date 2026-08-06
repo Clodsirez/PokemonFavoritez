@@ -174,7 +174,7 @@ th.gen-head{
 .slot:hover{transform:translateY(-2px) scale(1.05); border-color:var(--accent-2); z-index:2;}
 .slot:focus-visible{outline:2px solid var(--accent-2); outline-offset:2px;}
 .slot.filled{border-style:solid; border-color:transparent; background:radial-gradient(circle at 50% 40%, #3a2e52, #241b33 75%);}
-.slot img{width:52px;height:52px;image-rendering:pixelated;filter:drop-shadow(0 2px 3px rgba(0,0,0,0.5));}
+.slot img{width:52px;height:52px;image-rendering:auto;object-fit:contain;filter:drop-shadow(0 2px 3px rgba(0,0,0,0.5));}
 .slot .ball-icon{width:22px;height:22px;border-radius:50%;
   background:linear-gradient(180deg,var(--accent) 0 48%, #efe9f7 48% 52%, #efe9f7 52% 56%, var(--panel) 56% 100%);
   border:2px solid #efe9f7;
@@ -298,7 +298,7 @@ th.gen-head{
 }
 .result-tile:hover{border-color:var(--accent-2); transform:translateY(-2px);}
 .result-tile:focus-visible{outline:2px solid var(--accent-2); outline-offset:1px;}
-.result-tile img{width:40px;height:40px;image-rendering:pixelated;}
+.result-tile img{width:40px;height:40px;image-rendering:auto;object-fit:contain;}
 .result-tile .dexno{font-family:'JetBrains Mono',monospace; font-size:8.5px; color:var(--muted);}
 .result-tile .tname{
   font-size:8.5px; color:var(--ink); text-align:center; line-height:1.1;
@@ -354,7 +354,7 @@ const ALL_ENTRIES = Object.keys(POKEMON).map(id => ({ id: Number(id), name: POKE
 function spriteUrl(entryOrId){
   // accepts either an entry {slug} or a numeric dex id (looks up slug)
   const slug = (typeof entryOrId === 'object') ? entryOrId.slug : POKEMON[entryOrId].slug;
-  return `https://img.pokemondb.net/sprites/home/normal/2x/${slug}.jpg`;
+  return `https://img.pokemondb.net/sprites/scarlet-violet/icon/${slug}.png`;
 }
 function entryById(id){
   return { id: Number(id), name: POKEMON[id].name, slug: POKEMON[id].slug };
